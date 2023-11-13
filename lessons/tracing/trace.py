@@ -2,7 +2,7 @@ from typing import List
 
 
 def sum():
-    print('but better')
+    print('but EVEN better')
 
 def sum(numbers: List[int]) -> int:
     a = 0
