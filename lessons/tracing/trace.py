@@ -1,7 +1,8 @@
 from typing import List
 
 
-
+def sum():
+    print('but better')
 
 def sum(numbers: List[int]) -> int:
     a = 0
