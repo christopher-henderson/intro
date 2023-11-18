@@ -74,3 +74,34 @@ def test_remove_negatives():
     ]
     for test in tests:
         assert remove_negatives(test['input']) == test['want']
+
+
+def swap(numbers: List[int], left: int, right: int) -> List[int]:
+    pass
+
+
+def test_swap():
+    tests = [
+        {
+            'input': [[1, 2], 0, 1],
+            'want': [2, 1]
+        },
+        {
+            'input': [[1, 2, 3], 0, 2],
+            'want': [3, 2, 1]
+        },
+        {
+            'input': [[1, 2, 3], 0, 2],
+            'want': [3, 2, 1]
+        },
+        {
+            'input': [[1, 2, 3, 4], 0, -1],
+            'want': [4, 2, 3, 1]
+        },
+        {
+            'input': [[1, 2, 3, 4], -3, -1],
+            'want': [1, 4, 3, 2]
+        },
+    ]
+    for test in tests:
+        assert swap(*test['input']) == test['want']
