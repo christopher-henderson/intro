@@ -2,7 +2,7 @@ from typing import List
 
 
 def next_n_multiples_of(base: int, n) -> List[int]:
-    pass
+    return [base ** i for i in range(2, n + 2)]
 
 
 def test_next_five_multiples_of():
@@ -40,7 +40,7 @@ def test_next_five_multiples_of():
 
 
 def remove_negatives(numbers: List[int]) -> List[int]:
-    pass
+    return [number for number in numbers if number % 2 == 0]
 
 
 def test_remove_negatives():
