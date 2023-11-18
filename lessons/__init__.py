@@ -1,0 +1,1 @@
+from puzzles import fizbuzz
