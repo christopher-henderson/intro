@@ -54,18 +54,21 @@ def sign_of(a: int, b: int) -> int:
     return 1 if product >= 0 else -1
 
 
-assert divide(10, 2) == 5
-assert divide(11, 2) == 5
-assert divide(1, 2) == 0
-assert divide(2, 2) == 1
-assert divide(-2, 2) == -1
-assert divide(2, -2) == -1
-assert divide(-2, -2) == 1
+def assert_eq(got, want):
+    assert got == want, f"got {got}, want {want}"
 
-assert multiply(2, 5) == 10
-assert multiply(11, 2) == 22
-assert multiply(1, -12) == -12
-assert multiply(2, 2) == 4
-assert multiply(-2, 2) == -4
-assert multiply(2, -2) == -4
-assert multiply(-2, -2) == 4
+assert_eq(divide(10, 2), 5)
+assert_eq(divide(11, 2), 5)
+assert_eq(divide(1, 2), 0)
+assert_eq(divide(2, 2), 1)
+assert_eq(divide(-2, 2), -1)
+assert_eq(divide(2, -2), -1)
+assert_eq(divide(-2, -2), 1)
+
+assert_eq(multiply(2, 5), 10)
+assert_eq(multiply(11, 2), 22)
+assert_eq(multiply(1, -12), -12)
+assert_eq(multiply(2, 2), 4)
+assert_eq(multiply(-2, 2), -4)
+assert_eq(multiply(2, -2), -4)
+assert_eq(multiply(-2, -2), 4)
