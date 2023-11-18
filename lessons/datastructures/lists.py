@@ -109,7 +109,9 @@ def test_swap():
 
 
 def reverse(numbers: List[int]) -> List[int]:
-    pass
+    for i in range(0, int(len(numbers)/2)):
+        swap(numbers, i, len(numbers) - 1 - i)
+    return numbers
 
 
 def test_reverse():
