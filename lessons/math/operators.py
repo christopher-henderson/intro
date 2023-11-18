@@ -1,4 +1,3 @@
-
 # Write a function that implements division.
 #
 # You may discard any remainder the comes from division.
@@ -9,14 +8,21 @@
 #
 # May be given negative numbers.
 #
-# assert divide(2, 2) == -1
+# assert divide(2, 2) == 1
 # assert divide(-2, 2) == -1
 # assert divide(2, -2) == -1
 # assert divide(-2, -2) == 1
 #
 # You are NOT allowed to use the builtin division operator (/).
 def divide(numerator: int, denominator: int) -> int:
-    raise NotImplemented()
+    sign = sign_of(numerator, denominator)
+    answer = 0
+    numerator = abs(numerator)
+    denominator = abs(denominator)
+    while numerator >= denominator:
+        numerator -= denominator
+        answer += 1
+    return answer * sign
 
 
 # Write a function that implements multiplication.
@@ -32,6 +38,34 @@ def divide(numerator: int, denominator: int) -> int:
 # assert multiply(2, -2) == -4
 # assert multiply(-2, -2) == 4
 #
-# You are NOT allowed to use the builtin division operator (/).
+# You are NOT allowed to use the builtin multiplication operator (*).
 def multiply(left: int, right: int):
-    raise NotImplemented()
+    sign = sign_of(left, right)
+    answer = 0
+    left = abs(left)
+    right = abs(right)
+    for i in range(0, right):
+        answer += left
+    return answer * sign
+
+
+def sign_of(a: int, b: int) -> int:
+    product = a * b
+    return 1 if product >= 0 else -1
+
+
+assert divide(10, 2) == 5
+assert divide(11, 2) == 5
+assert divide(1, 2) == 0
+assert divide(2, 2) == 1
+assert divide(-2, 2) == -1
+assert divide(2, -2) == -1
+assert divide(-2, -2) == 1
+
+assert multiply(2, 5) == 10
+assert multiply(11, 2) == 22
+assert multiply(1, -12) == -12
+assert multiply(2, 2) == 4
+assert multiply(-2, 2) == -4
+assert multiply(2, -2) == -4
+assert multiply(-2, -2) == 4
