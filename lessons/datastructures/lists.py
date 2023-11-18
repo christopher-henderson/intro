@@ -77,7 +77,8 @@ def test_remove_negatives():
 
 
 def swap(numbers: List[int], left: int, right: int) -> List[int]:
-    pass
+    numbers[left], numbers[right] = numbers[right], numbers[left]
+    return numbers
 
 
 def test_swap():
