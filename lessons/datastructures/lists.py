@@ -105,3 +105,34 @@ def test_swap():
     ]
     for test in tests:
         assert swap(*test['input']) == test['want']
+
+
+def reverse(numbers: List[int]) -> List[int]:
+    pass
+
+
+def test_reverse():
+    tests = [
+        {
+            'input': [],
+            'want': []
+        },
+        {
+            'input': [1],
+            'want': [1]
+        },
+        {
+            'input': [1, 2],
+            'want': [2, 1]
+        },
+        {
+            'input': [2, 3, 1],
+            'want': [1, 3, 2]
+        },
+        {
+            'input': [3, 1, 2, 4],
+            'want': [4, 2, 1, 3]
+        },
+    ]
+    for test in tests:
+        assert reverse(test['input']) == test['want']
