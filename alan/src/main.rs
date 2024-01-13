@@ -78,7 +78,7 @@ fn large() {
     let input: Vec<Vec<char>> = serde_json::from_slice(&b).unwrap();
     println!("Loaded");
     let start = Instant::now();
-    let got = solve(input, "ALAN");
+    let got = par::solve(input, "ALAN");
     let took = Instant::now().duration_since(start);
     println!("Got {got} after {took:?}");
 }
